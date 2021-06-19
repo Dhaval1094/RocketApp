@@ -28,6 +28,7 @@
 		88A7B1EA267E03BF005184BF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A7B1E9267E03BF005184BF /* DetailViewController.swift */; };
 		88A7B1FD267E0CE7005184BF /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A7B1FC267E0CE7005184BF /* Indicator.swift */; };
 		88A7B22E267E1F6E005184BF /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A7B22D267E1F6E005184BF /* StorageManager.swift */; };
+		88A7B274267E88EA005184BF /* NetworkConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A7B273267E88EA005184BF /* NetworkConnectionManager.swift */; };
 		88B8953A267DDE840015F376 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B89539267DDE840015F376 /* AppDelegate.swift */; };
 		88B8953C267DDE840015F376 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B8953B267DDE840015F376 /* SceneDelegate.swift */; };
 		88B89546267DDE860015F376 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88B89545267DDE860015F376 /* Assets.xcassets */; };
@@ -61,6 +62,7 @@
 		88A7B1E9267E03BF005184BF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		88A7B1FC267E0CE7005184BF /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
 		88A7B22D267E1F6E005184BF /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		88A7B273267E88EA005184BF /* NetworkConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnectionManager.swift; sourceTree = "<group>"; };
 		88B89536267DDE840015F376 /* RocketApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88B89539267DDE840015F376 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88B8953B267DDE840015F376 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				88A7B1D4267DFB8B005184BF /* Protocols */,
 				88A7B1D1267DFB5B005184BF /* Clousers.swift */,
 				88A7B22D267E1F6E005184BF /* StorageManager.swift */,
+				88A7B273267E88EA005184BF /* NetworkConnectionManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				885B544A267DF6EB004BD63C /* HomeVMType.swift in Sources */,
 				885B5456267DF73A004BD63C /* HomeService.swift in Sources */,
 				88A7B1EA267E03BF005184BF /* DetailViewController.swift in Sources */,
+				88A7B274267E88EA005184BF /* NetworkConnectionManager.swift in Sources */,
 				88A7B1D8267DFB96005184BF /* ReusableView.swift in Sources */,
 				88A7B1D9267DFB96005184BF /* Alertable.swift in Sources */,
 				88A7B1DA267DFB96005184BF /* Nibloadable.swift in Sources */,

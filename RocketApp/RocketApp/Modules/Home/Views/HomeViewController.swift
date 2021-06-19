@@ -34,10 +34,10 @@ class HomeViewController: UIViewController, Alertable {
     //MARK: - Methods
     
     func configureUI() {
-        launchData = StorageManager.unarchiveAllLaunches()
         collectionView.registerCell(HomeCollViewCell.self)
         btnLoadMore.isEnabled = false
         title = NavigationTitle.HomeViewTitle
+        launchData = NetworkConnectionManager.shared.connected ? [Launches]() : StorageManager.unarchiveAllLaunches()
         collectionView.reloadData()
     }
     
@@ -77,8 +77,12 @@ class HomeViewController: UIViewController, Alertable {
                         //Do something on completion of fetch
                         break
                     case .fetchRocketDetail:
+                        guard let rocket = StorageManager.unarchive(path: "rocket" + (self.selectedObj?.id ?? ""), type: "rocket") as? Rocket else {
+                            return
+                        }
                         let detailView = self.storyboard?.instantiateViewController(identifier: "DetailViewController") as! DetailViewController
                         detailView.launchDetails = self.selectedObj
+                        detailView.rocketDetails = rocket
                         self.navigationController?.pushViewController(detailView, animated: true)
                     }
                 }
@@ -160,9 +164,21 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         guard let obj = launchData?[indexPath.item], let launchId = obj.id else {
             return
         }
-        self.selectedObj = obj        
-        let dto = FetchLaunchDetailsDTO.init(launchId: launchId)
-        vm.onLaunchDetails.execute(dto)
+        if !NetworkConnectionManager.shared.connected {
+            guard let rocket = StorageManager.unarchive(path: "rocket" + (obj.id ?? ""), type: "rocket") as? Rocket else {
+                //Still rocket detail not stored
+                //Redirect in details for only stored objects
+                return
+            }
+            let detailView = self.storyboard?.instantiateViewController(identifier: "DetailViewController") as! DetailViewController
+            detailView.launchDetails = obj
+            detailView.rocketDetails = rocket
+            self.navigationController?.pushViewController(detailView, animated: true)
+        } else {
+            self.selectedObj = obj
+            let dto = FetchLaunchDetailsDTO.init(launchId: launchId)
+            vm.onLaunchDetails.execute(dto)
+        }
     }
     
 }

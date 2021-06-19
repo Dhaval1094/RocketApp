@@ -29,10 +29,6 @@ class DetailViewController: UIViewController {
     
     func configureUI() {
         title = NavigationTitle.DetailViewTitle
-        guard let rocket = StorageManager.unarchive(path: "rocket" + (launchDetails?.id ?? ""), type: "rocket") as? Rocket else {
-            return
-        }
-        self.rocketDetails = rocket
         if let url = URL(string: launchDetails?.mission?.missionPatch ?? "") {
             imageView.setImageWith(url: url , placeholder: UIImage(named: "rocket_icon"), imageIndicator: .gray, completion: nil)
         }

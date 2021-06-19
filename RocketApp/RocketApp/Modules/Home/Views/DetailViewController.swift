@@ -35,6 +35,10 @@ class DetailViewController: UIViewController {
         if let r = self.rocketDetails?.rocket, let name = r.name, let type = r.type, let desc = self.launchDetails?.mission?.name, let code = self.launchDetails?.site {
             self.textView.text = "\u{1F680} Name: \(name) \r\n\u{1F680} Type: \(type) \r\n\u{1F680} Code: \(code) \r\n\u{1F680} Desc: \(desc) "
         }
+        imageView.transform = CGAffineTransform(scaleX: 0.00001, y: 0.00001)
+        UIView.animate(withDuration: 1.0, animations: { [weak self] in
+            self?.imageView.transform = CGAffineTransform.identity
+        })
     }
     
 }

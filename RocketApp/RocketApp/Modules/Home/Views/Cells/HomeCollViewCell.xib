@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HomeCollViewCell" customModule="RocketLaunchApp" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HomeCollViewCell" customModule="RocketApp" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="424" height="287"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -18,20 +18,21 @@
                     <rect key="frame" x="4" y="4" width="416" height="273"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hju-K9-BON">
-                            <rect key="frame" x="0.0" y="0.0" width="416" height="200"/>
+                            <rect key="frame" x="133" y="20" width="150" height="150"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="200" id="F6u-5x-ARD"/>
+                                <constraint firstAttribute="height" constant="150" id="F6u-5x-ARD"/>
+                                <constraint firstAttribute="width" secondItem="Hju-K9-BON" secondAttribute="height" multiplier="25:25" id="bKr-CL-anf"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7q-Fu-p4K">
-                            <rect key="frame" x="8" y="220" width="400" height="45"/>
+                            <rect key="frame" x="8" y="200" width="400" height="65"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSF-Xy-oy4">
-                            <rect key="frame" x="8" y="200" width="397" height="20"/>
+                            <rect key="frame" x="8" y="180" width="397" height="20"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="NNG-vS-M8N"/>
@@ -43,13 +44,13 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="Hju-K9-BON" firstAttribute="leading" secondItem="6On-pF-Q1A" secondAttribute="leading" id="EWr-KQ-VLv"/>
+                        <constraint firstItem="Hju-K9-BON" firstAttribute="centerX" secondItem="6On-pF-Q1A" secondAttribute="centerX" id="0Tg-Fx-okg"/>
                         <constraint firstItem="Hju-K9-BON" firstAttribute="centerX" secondItem="X7q-Fu-p4K" secondAttribute="centerX" id="M4C-n8-t4e"/>
                         <constraint firstItem="X7q-Fu-p4K" firstAttribute="top" secondItem="ZSF-Xy-oy4" secondAttribute="bottom" id="Yb2-aj-Tmv"/>
-                        <constraint firstItem="Hju-K9-BON" firstAttribute="top" secondItem="6On-pF-Q1A" secondAttribute="top" id="bN9-6C-BjA"/>
+                        <constraint firstItem="Hju-K9-BON" firstAttribute="top" secondItem="6On-pF-Q1A" secondAttribute="top" constant="20" id="bN9-6C-BjA"/>
                         <constraint firstItem="X7q-Fu-p4K" firstAttribute="leading" secondItem="6On-pF-Q1A" secondAttribute="leading" constant="8" id="d3j-oA-UJY"/>
                         <constraint firstAttribute="trailing" secondItem="ZSF-Xy-oy4" secondAttribute="trailing" constant="11" id="ipN-NL-Qd3"/>
-                        <constraint firstItem="ZSF-Xy-oy4" firstAttribute="top" secondItem="Hju-K9-BON" secondAttribute="bottom" id="mvk-lW-xGw"/>
+                        <constraint firstItem="ZSF-Xy-oy4" firstAttribute="top" secondItem="Hju-K9-BON" secondAttribute="bottom" constant="10" id="mvk-lW-xGw"/>
                         <constraint firstItem="ZSF-Xy-oy4" firstAttribute="leading" secondItem="6On-pF-Q1A" secondAttribute="leading" constant="8" id="s0M-pf-tNd"/>
                         <constraint firstAttribute="trailing" secondItem="X7q-Fu-p4K" secondAttribute="trailing" constant="8" id="sXL-aD-s78"/>
                         <constraint firstAttribute="bottom" secondItem="X7q-Fu-p4K" secondAttribute="bottom" constant="8" id="vbT-Ip-N5K"/>

@@ -145,12 +145,13 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         guard let obj = launchData?[indexPath.item] else {
             return cell
         }
+        cell.backgroundColor = UIColor.gray.withAlphaComponent(0.1)
         cell.configureWith(obj: obj)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.frame.size.width / 2.3, height: self.view.frame.size.height/2.9)
+        return CGSize(width: self.view.frame.size.width / 2.3, height: self.view.frame.size.height/3.3)
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {

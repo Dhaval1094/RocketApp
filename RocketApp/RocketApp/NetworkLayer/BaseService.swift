@@ -28,6 +28,7 @@ class BaseService {
                             debugPrint(error)
                         }
                     }
+                    observer.onError(AppError.unprocessableRequest)
                     
                 case let .failure(error):
                     if let body = try? error.response?.mapJSON() {

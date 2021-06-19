@@ -15,7 +15,7 @@ extension UIImageView {
         self.sd_setImage(with: url, placeholderImage: placeholder, options: .retryFailed, context: nil, progress: nil) { (img, error, cacheType, url) in
             if error != nil {
                 if placeholder == nil {
-                    self.image =  UIImage(named: "placeholder")
+                    self.image =  UIImage(named: "rocket_icon")
                 } else {
                     self.image = placeholder
                 }

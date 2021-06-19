@@ -30,10 +30,13 @@ class HomeViewController: UIViewController, Alertable {
         configureUI()
         bindVM()
     }
-  
+    
     //MARK: - Methods
     
     func configureUI() {
+        collectionView.registerCell(HomeCollViewCell.self)
+        btnLoadMore.isEnabled = false
+        launchData = [Launches]()
         title = NavigationTitle.HomeViewTitle
     }
     
@@ -49,7 +52,7 @@ class HomeViewController: UIViewController, Alertable {
             let dto = FetchMoreLaunchesDTO(cursor: cursor)
             //API call for LoadMore
             strongSelf.vm.onLoadMoreData.execute(dto)
-          return .empty()
+            return .empty()
         })
         
         //Subscribe launchData for observe any changes to that object
@@ -64,33 +67,33 @@ class HomeViewController: UIViewController, Alertable {
         
         //For check the state of result after completion of event
         vm.state.isCompleteByAction()
-          .asDriver(onErrorJustReturn: nil)
-          .drive(onNext: { [weak self] type in
-            guard let self = self else { return }
-            if let type = type {
-              switch type {
-              case .fetchLauncheDetail:
-                //Do something on completion of fetch
-                break
-              case .fetchRocketDetail:
-                //show rocket details
-                print(self.rocketData?.rocket?.name)
-              }
-            }
-          })
-          .disposed(by: disposeBag)
-
+            .asDriver(onErrorJustReturn: nil)
+            .drive(onNext: { [weak self] type in
+                guard let self = self else { return }
+                if let type = type {
+                    switch type {
+                    case .fetchLauncheDetail:
+                        //Do something on completion of fetch
+                        break
+                    case .fetchRocketDetail:
+                        //show rocket details
+                        self.collectionView.reloadData()
+                    }
+                }
+            })
+            .disposed(by: disposeBag)
+        
         //For handling the error after completion of any event
         vm.error
-          .asDriver(onErrorJustReturn: nil)
-          .drive(onNext: handleError())
-          .disposed(by: disposeBag)
+            .asDriver(onErrorJustReturn: nil)
+            .drive(onNext: handleError())
+            .disposed(by: disposeBag)
         
         //Call LaunchData API
         vm.onGetLaunchData.execute()
         
     }
-
+    
 }
 
 //MARK: - Handlers
@@ -109,16 +112,16 @@ private extension HomeViewController {
         }
     }
     func handleState() -> SingleResult<Bool> {
-      return { isComplete in
-        //Get the completion state of the API call
-      }
+        return { isComplete in
+            //Get the completion state of the API call
+        }
     }
-
+    
     func handleError() -> SingleResult<Error?> {
-      return { [weak self] error in
-        guard let self = self, let error = error else { return }
-        self.showAlert(message: error.localizedDescription)
-      }
+        return { [weak self] error in
+            guard let self = self, let error = error else { return }
+            self.showAlert(message: error.localizedDescription)
+        }
     }
 }
 
@@ -126,12 +129,33 @@ private extension HomeViewController {
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return launchData?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(HomeCollViewCell.self, for: indexPath)
+        guard let obj = launchData?[indexPath.item] else {
+            return cell
+        }
+        cell.configureWith(obj: obj)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: self.view.frame.size.width / 2.3, height: self.view.frame.size.height/2.9)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        btnLoadMore.isEnabled = indexPath.row == launchData!.count - 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let obj = launchData?[indexPath.item], let launchId = obj.id else {
+            return
+        }
+        self.selectedObj = obj
+        let dto = FetchLaunchDetailsDTO.init(launchId: launchId)
+        vm.onLaunchDetails.execute(dto)
     }
     
 }

@@ -37,6 +37,10 @@
                                         <size key="customSize" width="167" height="150"/>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="bTj-vw-tAn" id="fwq-uu-ZgP"/>
+                                    <outlet property="delegate" destination="bTj-vw-tAn" id="eqf-xA-JtU"/>
+                                </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jwm-tL-jlZ">
                                 <rect key="frame" x="0.0" y="822" width="414" height="40"/>

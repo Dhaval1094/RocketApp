@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		2DB7F9D3A16E26C4356605EA /* Pods_RocketApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32117CA05DEAF2F95A18D3AE /* Pods_RocketApp.framework */; };
+		885B544A267DF6EB004BD63C /* HomeVMType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B5449267DF6EB004BD63C /* HomeVMType.swift */; };
+		885B5450267DF712004BD63C /* ActivityState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B544C267DF711004BD63C /* ActivityState.swift */; };
+		885B5451267DF712004BD63C /* Cloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B544D267DF711004BD63C /* Cloud.swift */; };
+		885B5452267DF712004BD63C /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B544E267DF711004BD63C /* BaseService.swift */; };
+		885B5453267DF712004BD63C /* CloudDTOs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B544F267DF712004BD63C /* CloudDTOs.swift */; };
+		885B5456267DF73A004BD63C /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B5455267DF73A004BD63C /* HomeService.swift */; };
+		885B545A267DF76D004BD63C /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B5458267DF76C004BD63C /* Rocket.swift */; };
+		885B545B267DF76D004BD63C /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B5459267DF76D004BD63C /* Launch.swift */; };
 		88B8953A267DDE840015F376 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B89539267DDE840015F376 /* AppDelegate.swift */; };
 		88B8953C267DDE840015F376 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B8953B267DDE840015F376 /* SceneDelegate.swift */; };
 		88B89544267DDE840015F376 /* RocketApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 88B89542267DDE840015F376 /* RocketApp.xcdatamodeld */; };
@@ -22,6 +30,14 @@
 		32117CA05DEAF2F95A18D3AE /* Pods_RocketApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RocketApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		696F629F80C3E9A553ED9E8A /* Pods-RocketApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RocketApp.debug.xcconfig"; path = "Target Support Files/Pods-RocketApp/Pods-RocketApp.debug.xcconfig"; sourceTree = "<group>"; };
 		7339565BE145AFB6038D0820 /* Pods-RocketApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RocketApp.release.xcconfig"; path = "Target Support Files/Pods-RocketApp/Pods-RocketApp.release.xcconfig"; sourceTree = "<group>"; };
+		885B5449267DF6EB004BD63C /* HomeVMType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVMType.swift; sourceTree = "<group>"; };
+		885B544C267DF711004BD63C /* ActivityState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityState.swift; sourceTree = "<group>"; };
+		885B544D267DF711004BD63C /* Cloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloud.swift; sourceTree = "<group>"; };
+		885B544E267DF711004BD63C /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		885B544F267DF712004BD63C /* CloudDTOs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudDTOs.swift; sourceTree = "<group>"; };
+		885B5455267DF73A004BD63C /* HomeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		885B5458267DF76C004BD63C /* Rocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
+		885B5459267DF76D004BD63C /* Launch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
 		88B89536267DDE840015F376 /* RocketApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88B89539267DDE840015F376 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88B8953B267DDE840015F376 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +143,8 @@
 		88B89556267DE04F0015F376 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				885B5459267DF76D004BD63C /* Launch.swift */,
+				885B5458267DF76C004BD63C /* Rocket.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -141,6 +159,10 @@
 		88B89558267DE0620015F376 /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
+				885B544C267DF711004BD63C /* ActivityState.swift */,
+				885B544E267DF711004BD63C /* BaseService.swift */,
+				885B544D267DF711004BD63C /* Cloud.swift */,
+				885B544F267DF712004BD63C /* CloudDTOs.swift */,
 			);
 			path = NetworkLayer;
 			sourceTree = "<group>";
@@ -174,6 +196,7 @@
 		88B8955E267DE0D80015F376 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				885B5455267DF73A004BD63C /* HomeService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -189,6 +212,7 @@
 		88B89560267DE0E40015F376 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				885B5449267DF6EB004BD63C /* HomeVMType.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -316,10 +340,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				88B89569267DE2440015F376 /* HomeViewController.swift in Sources */,
+				885B5453267DF712004BD63C /* CloudDTOs.swift in Sources */,
 				88B89566267DE1CF0015F376 /* Common.swift in Sources */,
+				885B545A267DF76D004BD63C /* Rocket.swift in Sources */,
 				88B8953A267DDE840015F376 /* AppDelegate.swift in Sources */,
 				88B8953C267DDE840015F376 /* SceneDelegate.swift in Sources */,
 				88B89544267DDE840015F376 /* RocketApp.xcdatamodeld in Sources */,
+				885B5451267DF712004BD63C /* Cloud.swift in Sources */,
+				885B544A267DF6EB004BD63C /* HomeVMType.swift in Sources */,
+				885B5456267DF73A004BD63C /* HomeService.swift in Sources */,
+				885B545B267DF76D004BD63C /* Launch.swift in Sources */,
+				885B5450267DF712004BD63C /* ActivityState.swift in Sources */,
+				885B5452267DF712004BD63C /* BaseService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,5 +23,5 @@ struct CollCellIdentifier {
 
 //MARK: - Navigation Titles
 struct NavigationTitle {
-    static let HomeViewTitle = "Appolo"
+    static let HomeViewTitle = "Rocket list"
 }

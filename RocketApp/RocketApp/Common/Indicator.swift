@@ -17,7 +17,7 @@ class Indicator {
     init() {
         let options = EZProgressOptions { (option) in
             option.radius = 80
-            option.secondLayerStrokeColor = UIColor.green
+            option.secondLayerStrokeColor = UIColor.white.withAlphaComponent(0.6)
             option.strokeWidth = 10
             option.thirdLayerStrokeColor = UIColor.green.withAlphaComponent(0.6)
             option.firstLayerStrokeColor = UIColor.blue.withAlphaComponent(0.6)

@@ -26,3 +26,8 @@ struct NavigationTitle {
     static let HomeViewTitle = "Rocket list"
     static let DetailViewTitle = "Rocket details"
 }
+
+//MARK: - Set Notification Observers
+extension Notification.Name {
+    static let networkStatusChange = Notification.Name("__networkStatusChangeNotification")
+}

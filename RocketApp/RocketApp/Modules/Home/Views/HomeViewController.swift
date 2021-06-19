@@ -21,7 +21,6 @@ class HomeViewController: UIViewController, Alertable {
     private var disposeBag = DisposeBag()
     private var launchData: [Launches]?
     private var selectedObj: Launches?
-    private var rocketData: Rocket?
     
     //MARK: - ViewController Lifecycle methods
     override func viewDidLoad() {
@@ -37,8 +36,9 @@ class HomeViewController: UIViewController, Alertable {
     func configureUI() {
         collectionView.registerCell(HomeCollViewCell.self)
         btnLoadMore.isEnabled = false
-        launchData = [Launches]()
         title = NavigationTitle.HomeViewTitle
+        launchData = NetworkConnectionManager.shared.connected ? [Launches]() : StorageManager.unarchiveAllLaunches()
+        collectionView.reloadData()
     }
     
     func bindVM() {
@@ -52,7 +52,6 @@ class HomeViewController: UIViewController, Alertable {
             }
             let dto = FetchMoreLaunchesDTO(cursor: cursor)
             //API call for LoadMore
-            Indicator.shared.show()
             strongSelf.vm.onLoadMoreData.execute(dto)
             return .empty()
         })
@@ -78,9 +77,12 @@ class HomeViewController: UIViewController, Alertable {
                         //Do something on completion of fetch
                         break
                     case .fetchRocketDetail:
+                        guard let rocket = StorageManager.unarchive(path: "rocket" + (self.selectedObj?.id ?? ""), type: "rocket") as? Rocket else {
+                            return
+                        }
                         let detailView = self.storyboard?.instantiateViewController(identifier: "DetailViewController") as! DetailViewController
-                        detailView.rocketDetails = self.rocketData
                         detailView.launchDetails = self.selectedObj
+                        detailView.rocketDetails = rocket
                         self.navigationController?.pushViewController(detailView, animated: true)
                     }
                 }
@@ -94,7 +96,6 @@ class HomeViewController: UIViewController, Alertable {
             .disposed(by: disposeBag)
         
         //Call LaunchData API
-        Indicator.shared.show()
         vm.onGetLaunchData.execute()
     }
     
@@ -104,28 +105,30 @@ class HomeViewController: UIViewController, Alertable {
 private extension HomeViewController {
     func handleRocketLaunchData() -> (([Launches]?) -> Void)? {
         return { [weak self] launches in
-            Indicator.shared.hide()
             guard let strongSelf = self, let newLaunches = launches else { return }
-            strongSelf.launchData?.append(contentsOf: newLaunches)
-            strongSelf.collectionView.reloadData()
+            if strongSelf.launchData != nil {
+                strongSelf.launchData!.append(contentsOf: newLaunches)
+                for obj in strongSelf.launchData! {
+                    StorageManager.archive(object: obj as NSObject, path: "launch" + (obj.id ?? ""))
+                    strongSelf.collectionView.reloadData()
+                }
+            }
         }
     }
     func handleRocketDetailsData() -> ((Rocket?) -> Void)? {
         return { [weak self] rocket in
-            Indicator.shared.hide()
-            guard let strongSelf = self, let rocket = rocket else { return }
-            strongSelf.rocketData = rocket
+            guard let self = self, let rocket = rocket else { return }
+            let path = "rocket" + (self.selectedObj?.id ?? "")
+            StorageManager.archive(object: rocket, path: path)
         }
     }
     func handleState() -> SingleResult<Bool> {
-        Indicator.shared.hide()
         return { isComplete in
             //Get the completion state of the API call
         }
     }
     
     func handleError() -> SingleResult<Error?> {
-        Indicator.shared.hide()
         return { [weak self] error in
             guard let self = self, let error = error else { return }
             self.showAlert(message: error.localizedDescription)
@@ -150,7 +153,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.frame.size.width / 2.3, height: self.view.frame.size.height/2.9)
+        return CGSize(width: self.view.frame.size.width / 2.3, height: self.view.frame.size.height/3.3)
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
@@ -161,10 +164,21 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         guard let obj = launchData?[indexPath.item], let launchId = obj.id else {
             return
         }
-        self.selectedObj = obj
-        Indicator.shared.show()
-        let dto = FetchLaunchDetailsDTO.init(launchId: launchId)
-        vm.onLaunchDetails.execute(dto)
+        if !NetworkConnectionManager.shared.connected {
+            guard let rocket = StorageManager.unarchive(path: "rocket" + (obj.id ?? ""), type: "rocket") as? Rocket else {
+                //Still rocket detail not stored
+                //Redirect in details for only stored objects
+                return
+            }
+            let detailView = self.storyboard?.instantiateViewController(identifier: "DetailViewController") as! DetailViewController
+            detailView.launchDetails = obj
+            detailView.rocketDetails = rocket
+            self.navigationController?.pushViewController(detailView, animated: true)
+        } else {
+            self.selectedObj = obj
+            let dto = FetchLaunchDetailsDTO.init(launchId: launchId)
+            vm.onLaunchDetails.execute(dto)
+        }
     }
     
 }

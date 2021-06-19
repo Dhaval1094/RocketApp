@@ -79,8 +79,10 @@ private extension HomeVM {
     
     func handleLaunchListResponse(commonRequest: Observable<LaunchConnection>) {
         stateRelay.accept(.loading)
+        Indicator.shared.show()
         let request = commonRequest.materialize().share(replay: 1)
         request.elements().do(onNext: { (result) in
+            Indicator.shared.hide()
             self.lastCursor = result.cursor
             self.launchRelay.accept(result.launches)
         }).mapTo(ActivityState.complete(item: .fetchLauncheDetail))
@@ -90,6 +92,7 @@ private extension HomeVM {
         request
             .errors()
             .do(onNext: { [weak self] error in
+                Indicator.shared.hide()
                 guard let strongSelf = self else { return }
                 print(error.localizedDescription)
                 strongSelf.stateRelay.accept(.idle)
@@ -100,8 +103,10 @@ private extension HomeVM {
     
     func handleLaunchDetailsResponse(request: Observable<Rocket>) {
         stateRelay.accept(.loading)
+        Indicator.shared.show()
         let request = request.materialize().share(replay: 1)
         request.elements().do(onNext: { (rocket) in
+            Indicator.shared.hide()
             self.rocketRelay.accept(rocket)
         }).mapTo(ActivityState.complete(item: .fetchRocketDetail))
         .bind(to: stateRelay)
@@ -110,6 +115,7 @@ private extension HomeVM {
         request
             .errors()
             .do(onNext: { [weak self] error in
+                Indicator.shared.hide()
                 guard let strongSelf = self else { return }
                 print(error.localizedDescription)
                 strongSelf.stateRelay.accept(.idle)

@@ -27,9 +27,9 @@
 		88A7B1E6267DFE14005184BF /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A7B1E4267DFE14005184BF /* UICollectionView+Extension.swift */; };
 		88A7B1EA267E03BF005184BF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A7B1E9267E03BF005184BF /* DetailViewController.swift */; };
 		88A7B1FD267E0CE7005184BF /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A7B1FC267E0CE7005184BF /* Indicator.swift */; };
+		88A7B22E267E1F6E005184BF /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A7B22D267E1F6E005184BF /* StorageManager.swift */; };
 		88B8953A267DDE840015F376 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B89539267DDE840015F376 /* AppDelegate.swift */; };
 		88B8953C267DDE840015F376 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B8953B267DDE840015F376 /* SceneDelegate.swift */; };
-		88B89544267DDE840015F376 /* RocketApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 88B89542267DDE840015F376 /* RocketApp.xcdatamodeld */; };
 		88B89546267DDE860015F376 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88B89545267DDE860015F376 /* Assets.xcassets */; };
 		88B89549267DDE860015F376 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88B89547267DDE860015F376 /* LaunchScreen.storyboard */; };
 		88B89563267DE11D0015F376 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88B89562267DE11D0015F376 /* Home.storyboard */; };
@@ -60,10 +60,10 @@
 		88A7B1E4267DFE14005184BF /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		88A7B1E9267E03BF005184BF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		88A7B1FC267E0CE7005184BF /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
+		88A7B22D267E1F6E005184BF /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		88B89536267DDE840015F376 /* RocketApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88B89539267DDE840015F376 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88B8953B267DDE840015F376 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		88B89543267DDE840015F376 /* RocketApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RocketApp.xcdatamodel; sourceTree = "<group>"; };
 		88B89545267DDE860015F376 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88B89548267DDE860015F376 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88B8954A267DDE860015F376 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -158,7 +158,6 @@
 				88B89558267DE0620015F376 /* NetworkLayer */,
 				88B89559267DE06E0015F376 /* Error */,
 				88B89554267DE0110015F376 /* Resources */,
-				88B89542267DDE840015F376 /* RocketApp.xcdatamodeld */,
 			);
 			path = RocketApp;
 			sourceTree = "<group>";
@@ -206,6 +205,7 @@
 				88A7B1E2267DFE03005184BF /* Extensions */,
 				88A7B1D4267DFB8B005184BF /* Protocols */,
 				88A7B1D1267DFB5B005184BF /* Clousers.swift */,
+				88A7B22D267E1F6E005184BF /* StorageManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -403,7 +403,6 @@
 				885B545A267DF76D004BD63C /* Rocket.swift in Sources */,
 				88B8953A267DDE840015F376 /* AppDelegate.swift in Sources */,
 				88B8953C267DDE840015F376 /* SceneDelegate.swift in Sources */,
-				88B89544267DDE840015F376 /* RocketApp.xcdatamodeld in Sources */,
 				88A7B1FD267E0CE7005184BF /* Indicator.swift in Sources */,
 				885B5451267DF712004BD63C /* Cloud.swift in Sources */,
 				88A7B1D2267DFB5B005184BF /* Clousers.swift in Sources */,
@@ -419,6 +418,7 @@
 				885B5450267DF712004BD63C /* ActivityState.swift in Sources */,
 				88A7B1CE267DF99E005184BF /* Error.swift in Sources */,
 				88A7B1DF267DFDDE005184BF /* HomeCollViewCell.swift in Sources */,
+				88A7B22E267E1F6E005184BF /* StorageManager.swift in Sources */,
 				885B5452267DF712004BD63C /* BaseService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -615,19 +615,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		88B89542267DDE840015F376 /* RocketApp.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				88B89543267DDE840015F376 /* RocketApp.xcdatamodel */,
-			);
-			currentVersion = 88B89543267DDE840015F376 /* RocketApp.xcdatamodel */;
-			path = RocketApp.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 88B8952E267DDE840015F376 /* Project object */;
 }

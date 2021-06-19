@@ -140,6 +140,7 @@ private struct GraphQLQueryBuilder {
                               type
                             }
                             isBooked
+                            id
                           }
                         }
         """.trimmingCharacters(in: .whitespacesAndNewlines),

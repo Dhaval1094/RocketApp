@@ -72,6 +72,62 @@
             </objects>
             <point key="canvasLocation" x="676.81159420289862" y="156.69642857142856"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="oar-US-lPt">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" id="9wO-Zx-Rex" customClass="DetailViewController" customModule="RocketApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7PR-K9-txo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rMR-NC-zq8">
+                                <rect key="frame" x="20" y="74" width="374" height="374"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rMR-NC-zq8" secondAttribute="height" multiplier="1:1" id="EuD-0R-850"/>
+                                </constraints>
+                            </imageView>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uqv-oA-ibH">
+                                <rect key="frame" x="20" y="478" width="374" height="160"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Loading rocket detail..." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKc-DJ-M6n">
+                                        <rect key="frame" x="10" y="10" width="354" height="140"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.50559182359999999" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="BY5-X9-lLa"/>
+                                    <constraint firstAttribute="trailing" secondItem="jKc-DJ-M6n" secondAttribute="trailing" constant="10" id="U9v-15-ENu"/>
+                                    <constraint firstItem="jKc-DJ-M6n" firstAttribute="top" secondItem="uqv-oA-ibH" secondAttribute="top" constant="10" id="ULJ-Xz-t24"/>
+                                    <constraint firstAttribute="bottom" secondItem="jKc-DJ-M6n" secondAttribute="bottom" constant="10" id="fW6-jc-zyV"/>
+                                    <constraint firstItem="jKc-DJ-M6n" firstAttribute="leading" secondItem="uqv-oA-ibH" secondAttribute="leading" constant="10" id="uJA-25-Paa"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hbO-Be-n9Z"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rMR-NC-zq8" firstAttribute="top" secondItem="hbO-Be-n9Z" secondAttribute="top" constant="30" id="8lH-NB-i2I"/>
+                            <constraint firstItem="hbO-Be-n9Z" firstAttribute="trailing" secondItem="rMR-NC-zq8" secondAttribute="trailing" constant="20" id="FKU-Oc-OFd"/>
+                            <constraint firstItem="uqv-oA-ibH" firstAttribute="top" secondItem="rMR-NC-zq8" secondAttribute="bottom" constant="30" id="Obq-KV-op7"/>
+                            <constraint firstItem="uqv-oA-ibH" firstAttribute="leading" secondItem="rMR-NC-zq8" secondAttribute="leading" id="Zcn-bj-bEJ"/>
+                            <constraint firstItem="rMR-NC-zq8" firstAttribute="leading" secondItem="hbO-Be-n9Z" secondAttribute="leading" constant="20" id="noq-cE-ZLc"/>
+                            <constraint firstItem="uqv-oA-ibH" firstAttribute="trailing" secondItem="rMR-NC-zq8" secondAttribute="trailing" id="uud-Te-s1p"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="uqv-oA-ibH" id="Vxa-XG-cRv"/>
+                        <outlet property="imageView" destination="rMR-NC-zq8" id="nzB-in-8bu"/>
+                        <outlet property="textView" destination="jKc-DJ-M6n" id="Lcd-QU-c5a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vuy-jb-h5A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1472" y="157"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="hud-M3-HTD">
             <objects>
@@ -92,6 +148,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

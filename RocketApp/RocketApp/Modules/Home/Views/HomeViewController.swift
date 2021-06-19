@@ -76,8 +76,10 @@ class HomeViewController: UIViewController, Alertable {
                         //Do something on completion of fetch
                         break
                     case .fetchRocketDetail:
-                        //show rocket details
-                        self.collectionView.reloadData()
+                        let detailView = self.storyboard?.instantiateViewController(identifier: "DetailViewController") as! DetailViewController
+                        detailView.rocketDetails = self.rocketData
+                        detailView.launchDetails = self.selectedObj
+                        self.navigationController?.pushViewController(detailView, animated: true)
                     }
                 }
             })

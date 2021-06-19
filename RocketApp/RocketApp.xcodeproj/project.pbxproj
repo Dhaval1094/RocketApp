@@ -26,6 +26,7 @@
 		88A7B1E5267DFE14005184BF /* UIImageView+SDWebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A7B1E3267DFE14005184BF /* UIImageView+SDWebImage.swift */; };
 		88A7B1E6267DFE14005184BF /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A7B1E4267DFE14005184BF /* UICollectionView+Extension.swift */; };
 		88A7B1EA267E03BF005184BF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A7B1E9267E03BF005184BF /* DetailViewController.swift */; };
+		88A7B1FD267E0CE7005184BF /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A7B1FC267E0CE7005184BF /* Indicator.swift */; };
 		88B8953A267DDE840015F376 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B89539267DDE840015F376 /* AppDelegate.swift */; };
 		88B8953C267DDE840015F376 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B8953B267DDE840015F376 /* SceneDelegate.swift */; };
 		88B89544267DDE840015F376 /* RocketApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 88B89542267DDE840015F376 /* RocketApp.xcdatamodeld */; };
@@ -58,6 +59,7 @@
 		88A7B1E3267DFE14005184BF /* UIImageView+SDWebImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+SDWebImage.swift"; sourceTree = "<group>"; };
 		88A7B1E4267DFE14005184BF /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		88A7B1E9267E03BF005184BF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		88A7B1FC267E0CE7005184BF /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
 		88B89536267DDE840015F376 /* RocketApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88B89539267DDE840015F376 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88B8953B267DDE840015F376 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				88B89565267DE1CF0015F376 /* Common.swift */,
+				88A7B1FC267E0CE7005184BF /* Indicator.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				88B8953A267DDE840015F376 /* AppDelegate.swift in Sources */,
 				88B8953C267DDE840015F376 /* SceneDelegate.swift in Sources */,
 				88B89544267DDE840015F376 /* RocketApp.xcdatamodeld in Sources */,
+				88A7B1FD267E0CE7005184BF /* Indicator.swift in Sources */,
 				885B5451267DF712004BD63C /* Cloud.swift in Sources */,
 				88A7B1D2267DFB5B005184BF /* Clousers.swift in Sources */,
 				885B544A267DF6EB004BD63C /* HomeVMType.swift in Sources */,

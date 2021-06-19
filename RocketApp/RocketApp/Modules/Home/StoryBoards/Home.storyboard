@@ -27,7 +27,7 @@
                                     <inset key="sectionInset" minX="20" minY="10" maxX="20" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="b5B-rf-XA0" customClass="HomeCollectionCell" customModule="RocketLaunchApp" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="b5B-rf-XA0" customClass="HomeCollectionCell" customModule="RocketApp" customModuleProvider="target">
                                         <rect key="frame" x="20" y="10" width="167" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DId-mV-2l9">
@@ -59,6 +59,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YzG-ms-1cE"/>
+                    <connections>
+                        <outlet property="btnLoadMore" destination="Jwm-tL-jlZ" id="WcS-MO-Ufl"/>
+                        <outlet property="collectionView" destination="Wbd-7U-9U4" id="lqA-pQ-7RE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EB3-K3-oK4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

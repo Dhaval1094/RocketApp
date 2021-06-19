@@ -17,6 +17,10 @@
 		885B545A267DF76D004BD63C /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B5458267DF76C004BD63C /* Rocket.swift */; };
 		885B545B267DF76D004BD63C /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885B5459267DF76D004BD63C /* Launch.swift */; };
 		88A7B1CE267DF99E005184BF /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A7B1CD267DF99E005184BF /* Error.swift */; };
+		88A7B1D2267DFB5B005184BF /* Clousers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A7B1D1267DFB5B005184BF /* Clousers.swift */; };
+		88A7B1D8267DFB96005184BF /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A7B1D5267DFB96005184BF /* ReusableView.swift */; };
+		88A7B1D9267DFB96005184BF /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A7B1D6267DFB96005184BF /* Alertable.swift */; };
+		88A7B1DA267DFB96005184BF /* Nibloadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A7B1D7267DFB96005184BF /* Nibloadable.swift */; };
 		88B8953A267DDE840015F376 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B89539267DDE840015F376 /* AppDelegate.swift */; };
 		88B8953C267DDE840015F376 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B8953B267DDE840015F376 /* SceneDelegate.swift */; };
 		88B89544267DDE840015F376 /* RocketApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 88B89542267DDE840015F376 /* RocketApp.xcdatamodeld */; };
@@ -40,6 +44,10 @@
 		885B5458267DF76C004BD63C /* Rocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
 		885B5459267DF76D004BD63C /* Launch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
 		88A7B1CD267DF99E005184BF /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		88A7B1D1267DFB5B005184BF /* Clousers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clousers.swift; sourceTree = "<group>"; };
+		88A7B1D5267DFB96005184BF /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		88A7B1D6267DFB96005184BF /* Alertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
+		88A7B1D7267DFB96005184BF /* Nibloadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nibloadable.swift; sourceTree = "<group>"; };
 		88B89536267DDE840015F376 /* RocketApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88B89539267DDE840015F376 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88B8953B267DDE840015F376 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +87,16 @@
 				32117CA05DEAF2F95A18D3AE /* Pods_RocketApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		88A7B1D4267DFB8B005184BF /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				88A7B1D6267DFB96005184BF /* Alertable.swift */,
+				88A7B1D7267DFB96005184BF /* Nibloadable.swift */,
+				88A7B1D5267DFB96005184BF /* ReusableView.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		88B8952D267DDE840015F376 = {
@@ -154,6 +172,8 @@
 		88B89557267DE0570015F376 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				88A7B1D4267DFB8B005184BF /* Protocols */,
+				88A7B1D1267DFB5B005184BF /* Clousers.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -350,8 +370,12 @@
 				88B8953C267DDE840015F376 /* SceneDelegate.swift in Sources */,
 				88B89544267DDE840015F376 /* RocketApp.xcdatamodeld in Sources */,
 				885B5451267DF712004BD63C /* Cloud.swift in Sources */,
+				88A7B1D2267DFB5B005184BF /* Clousers.swift in Sources */,
 				885B544A267DF6EB004BD63C /* HomeVMType.swift in Sources */,
 				885B5456267DF73A004BD63C /* HomeService.swift in Sources */,
+				88A7B1D8267DFB96005184BF /* ReusableView.swift in Sources */,
+				88A7B1D9267DFB96005184BF /* Alertable.swift in Sources */,
+				88A7B1DA267DFB96005184BF /* Nibloadable.swift in Sources */,
 				885B545B267DF76D004BD63C /* Launch.swift in Sources */,
 				885B5450267DF712004BD63C /* ActivityState.swift in Sources */,
 				88A7B1CE267DF99E005184BF /* Error.swift in Sources */,

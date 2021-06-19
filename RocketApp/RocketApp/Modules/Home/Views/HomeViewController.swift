@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import Action
+import EZProgressHUD
 
 class HomeViewController: UIViewController, Alertable {
     
@@ -51,6 +52,7 @@ class HomeViewController: UIViewController, Alertable {
             }
             let dto = FetchMoreLaunchesDTO(cursor: cursor)
             //API call for LoadMore
+            Indicator.shared.show()
             strongSelf.vm.onLoadMoreData.execute(dto)
             return .empty()
         })
@@ -92,8 +94,8 @@ class HomeViewController: UIViewController, Alertable {
             .disposed(by: disposeBag)
         
         //Call LaunchData API
+        Indicator.shared.show()
         vm.onGetLaunchData.execute()
-        
     }
     
 }
@@ -102,6 +104,7 @@ class HomeViewController: UIViewController, Alertable {
 private extension HomeViewController {
     func handleRocketLaunchData() -> (([Launches]?) -> Void)? {
         return { [weak self] launches in
+            Indicator.shared.hide()
             guard let strongSelf = self, let newLaunches = launches else { return }
             strongSelf.launchData?.append(contentsOf: newLaunches)
             strongSelf.collectionView.reloadData()
@@ -109,17 +112,20 @@ private extension HomeViewController {
     }
     func handleRocketDetailsData() -> ((Rocket?) -> Void)? {
         return { [weak self] rocket in
+            Indicator.shared.hide()
             guard let strongSelf = self, let rocket = rocket else { return }
             strongSelf.rocketData = rocket
         }
     }
     func handleState() -> SingleResult<Bool> {
+        Indicator.shared.hide()
         return { isComplete in
             //Get the completion state of the API call
         }
     }
     
     func handleError() -> SingleResult<Error?> {
+        Indicator.shared.hide()
         return { [weak self] error in
             guard let self = self, let error = error else { return }
             self.showAlert(message: error.localizedDescription)
@@ -156,6 +162,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return
         }
         self.selectedObj = obj
+        Indicator.shared.show()
         let dto = FetchLaunchDetailsDTO.init(launchId: launchId)
         vm.onLaunchDetails.execute(dto)
     }

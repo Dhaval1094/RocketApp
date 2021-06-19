@@ -16,10 +16,9 @@ class HomeCollViewCell: UICollectionViewCell, ReusableView, NibLoadableView {
     func configureWith(obj: Launches) {
         lblTitle.text = obj.mission?.name
         lblDescription.text = obj.site
-        guard let url = URL(string: obj.mission?.missionPatch ?? "") else {
-            return
+        if let url = URL(string: obj.mission?.missionPatch ?? "") {
+            imgView.setImageWith(url: url , placeholder: UIImage(named: "rocket_icon"), imageIndicator: .gray, completion: nil)
         }
-        imgView.setImageWith(url: url , placeholder: UIImage(named: "placeholder"), imageIndicator: .gray, completion: nil)
     }
     
 }

@@ -29,10 +29,9 @@ class DetailViewController: UIViewController {
     
     func configureUI() {
         title = NavigationTitle.DetailViewTitle
-        guard let url = URL(string: launchDetails?.mission?.missionPatch ?? "") else {
-            return
+        if let url = URL(string: launchDetails?.mission?.missionPatch ?? "") {
+            imageView.setImageWith(url: url , placeholder: UIImage(named: "rocket_icon"), imageIndicator: .gray, completion: nil)
         }
-        imageView.setImageWith(url: url , placeholder: UIImage(named: "placeholder"), imageIndicator: .gray, completion: nil)
         if let r = self.rocketDetails?.rocket, let name = r.name, let type = r.type, let desc = self.launchDetails?.mission?.name, let code = self.launchDetails?.site {
             self.textView.text = "\u{1F680} Name: \(name) \r\n\u{1F680} Type: \(type) \r\n\u{1F680} Code: \(code) \r\n\u{1F680} Desc: \(desc) "
         }

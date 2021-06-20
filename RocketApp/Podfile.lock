@@ -3,6 +3,7 @@ PODS:
     - RxCocoa (< 7.0, >= 5.0)
     - RxSwift (< 7.0, >= 5.0)
   - Alamofire (5.4.3)
+  - EZProgressHUD (1.5.4)
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
   - Moya/RxSwift (14.0.0):
@@ -29,6 +30,7 @@ PODS:
 
 DEPENDENCIES:
   - Action (~> 4.0)
+  - EZProgressHUD (~> 1.5.3)
   - Moya/RxSwift (~> 14.0)
   - RxSwiftExt (~> 5.2)
   - SDWebImage (~> 5.0)
@@ -38,6 +40,7 @@ SPEC REPOS:
   trunk:
     - Action
     - Alamofire
+    - EZProgressHUD
     - Moya
     - RxCocoa
     - RxRelay
@@ -49,6 +52,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Action: 5dc2194f7a0b77857c82a677b0da655f197c005f
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  EZProgressHUD: 8a9ea85a209d30eb8016a0fe869e25204fde028b
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
@@ -57,6 +61,6 @@ SPEC CHECKSUMS:
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 8ae1e09f561d741c72553bb4577fbb8af7bec841
+PODFILE CHECKSUM: 37187bb9f6b328ad17b467ac89739d3659db4401
 
 COCOAPODS: 1.10.0

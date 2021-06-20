@@ -12,5 +12,6 @@ pod 'Action', '~> 4.0'                # observable abstraction
 pod 'RxSwiftExt', '~> 5.2'
 pod 'SDWebImage', '~> 5.0'
 pod 'SwiftyJSON', '~> 5.0'                # JSON-Data parsing convenience
+pod 'EZProgressHUD', '~> 1.5.3'
 
 end

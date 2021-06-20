@@ -10,7 +10,7 @@ Swift version ~ 5.0
 
 This is a demo application for fetch rocket details and it's launch data provided by Appolo's GraphQL API.
 
-This project follows MVVM architecture. RxSwift is used for acheave ViewModel binding.
+This project follows MVVM architecture. RxSwift is used for ViewModel binding.
 
 Moya is used for managing Network layer. 
 

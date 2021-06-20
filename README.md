@@ -1,8 +1,12 @@
 # RocketApp
 
 Xcode Version ~ 12.0.1
+
 iOS Deployment Target ~ 14.0
+
 Swift version ~ 5.0
+
+![Header](https://i.postimg.cc/ZKM8HjKP/Clipart-Rocket-1280x908-copy.png) 
 
 This is a demo application for fetch rocket details and it's launch data provided by Appolo's GraphQL API.
 
